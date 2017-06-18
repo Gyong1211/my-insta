@@ -3,4 +3,4 @@ from django.db import models
 
 
 class User(AbstractUser):
-    nickname = models.CharField(max_length=24)
+    nickname = models.CharField(max_length=24, unique=True)
