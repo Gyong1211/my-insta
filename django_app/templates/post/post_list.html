@@ -3,7 +3,11 @@
 {% block content %}
 {% for post in posts %}
 <p>{{post.author}}</p>
-<p><img src="{{post.photo.url}}" alt=""></p>
+<a href="{% url 'post:post_detail' post_pk=post.pk %}">
+    <p>
+        <img src="{{post.photo.url}}" alt="">
+    </p>
+</a>
 <p>좋아요 {{post.like_count}}개</p>
 {% endfor %}
 {% endblock %}
