@@ -7,7 +7,7 @@ class Post(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to='post')
     like_users = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         through='PostLike',
